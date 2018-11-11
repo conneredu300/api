@@ -1,0 +1,29 @@
+security:
+    # ...
+
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    firewalls:
+        main:
+            anonymous: ~
+            logout: ~
+
+            guard:
+                authenticators:
+                    - App\Security\TokenAuthenticator
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+
+            # if you want, disable storing the user in the session
+            # stateless: true
+
+            # .
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/apis, roles: ROLE_ADMIN }

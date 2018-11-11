@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Showing data{% endblock %}
+
+{% block body %}
+    {% if success is defined %}
+        <p>{{ success }}</p>
+    {% endif %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
