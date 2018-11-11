@@ -31,10 +31,6 @@ class People
      */
     private $cellphone;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", mappedBy="people", cascade={"persist", "remove"})
-     */
-    private $user;
 
     public function getId()
     {

@@ -5,6 +5,7 @@ security:
         App\Entity\User:
             algorithm: bcrypt
 
+
     firewalls:
         main:
             anonymous: ~
@@ -18,12 +19,12 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: username
+                property: apiToken
+        # used to reload user from session & other features (e.g. switch_user)
 
             # if you want, disable storing the user in the session
             # stateless: true
 
             # .
     access_control:
-        # require ROLE_ADMIN for /admin*
-        - { path: ^/api, roles: ROLE_ADMIN }
+        - { path: ^/apis, roles: ROLE_ADMIN }

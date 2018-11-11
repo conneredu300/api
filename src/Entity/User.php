@@ -20,7 +20,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $username;
+    private $apiToken;
 
     /**
      * @ORM\Column(type="json")
@@ -33,15 +33,21 @@ class User implements UserInterface
      */
     private $password;
 
-    /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
-     */
-    private $apiToken;
-
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getApiToken()
+    {
+        return $this->apiToken;
+    }
+
+    public function setApiToken(string $apiToken)
+    {
+        $this->apiToken = $apiToken;
+
+        return $this;
     }
 
     /**
@@ -51,14 +57,7 @@ class User implements UserInterface
      */
     public function getUsername()
     {
-        return (string) $this->username;
-    }
-
-    public function setUsername(string $username)
-    {
-        $this->username = $username;
-
-        return $this;
+        return (string) $this->apiToken;
     }
 
     /**
@@ -91,21 +90,6 @@ class User implements UserInterface
     public function setPassword(string $password)
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function getApiToken()
-    {
-        return (string) $this->apiToken;
-    }
-
-    public function setApiToken(string $password)
-    {
-        $this->apiToken = $password;
 
         return $this;
     }
