@@ -4,9 +4,9 @@ A simple app for s2it
     php7.1, Mysql, Curl, Apache
 
 ##HOWTO (linux)
-    apt-get update && sudo apt-get upgrade;
-    sudo apt-get install apache2 -y;
-    sudo apt-add-repository ppa:ondrej/php;
+    apt-get update && sudo apt-get upgrade
+    sudo apt-get install apache2 -y
+    sudo apt-add-repository ppa:ondrej/php
     sudo apt-get update;
     sudo apt-get install php7.1;
     sudo apt-get install mysql-server php7.1-mysql; (username must be "root" and password must be "admin")
