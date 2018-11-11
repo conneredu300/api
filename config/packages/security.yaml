@@ -26,4 +26,4 @@ security:
             # .
     access_control:
         # require ROLE_ADMIN for /admin*
-        - { path: ^/apis, roles: ROLE_ADMIN }
+        - { path: ^/api, roles: ROLE_ADMIN }
